@@ -559,15 +559,24 @@ def test_ut19_missing_previous_falls_back_to_full():
 
 
 def test_ut17_version_strings_consistent():
-    import tomllib
     from pathlib import Path
 
     import shadowinfer
     import shadowinfer.__main__ as cli
 
     root = Path(__file__).resolve().parents[1]
-    pyproject = tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))
-    assert pyproject["project"]["version"] == shadowinfer.__version__ == "3.12.0"
+    pyproject_text = (root / "pyproject.toml").read_text(encoding="utf-8")
+    try:
+        import tomllib
+    except ModuleNotFoundError:  # Python 3.10 has no stdlib TOML parser
+        import re
+
+        match = re.search(r'^version\s*=\s*"([^"]+)"', pyproject_text, re.MULTILINE)
+        assert match is not None
+        pyproject_version = match.group(1)
+    else:
+        pyproject_version = tomllib.loads(pyproject_text)["project"]["version"]
+    assert pyproject_version == shadowinfer.__version__ == "3.12.0"
     assert cli.__version__ == shadowinfer.__version__
 
 
