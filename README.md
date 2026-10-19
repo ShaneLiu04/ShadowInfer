@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="ShadowInfer — 面向端侧的 Diffusion LLM 推理优化框架" width="100%">
+  <img src="assets/cover-v2.png" alt="ShadowInfer — 面向端侧的 Diffusion LLM 推理优化框架" width="100%">
 </p>
 
 <p align="center">
@@ -998,7 +998,8 @@ ShadowInfer/
 │   ├── ISSUE_TEMPLATE/             # Issue 模板
 │   └── PULL_REQUEST_TEMPLATE.md
 ├── assets/
-│   └── banner.svg                  # 封面横幅（矢量）
+│   ├── banner.svg                  # 封面横幅 v1（矢量，保留）
+│   └── cover-v2.svg / cover-v2.png # 封面 v2（当前 README 展示）
 ├── LICENSE                         # MIT 许可证
 ├── README.md                       # 本文档（主文档）
 ├── ROADMAP.md                      # 项目路线图

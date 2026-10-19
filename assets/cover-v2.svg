@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1200" width="2560" height="1200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#060b16"/>
+      <stop offset="1" stop-color="#0f1830"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="0.5" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#a5f3fc"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#182742" stroke-width="1"/>
+    </pattern>
+    <filter id="blur80" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <marker id="arrowGray" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="2560" height="1200" fill="url(#bg)"/>
+  <rect width="2560" height="1200" fill="url(#grid)" opacity="0.45"/>
+  <ellipse cx="360" cy="130" rx="520" ry="260" fill="#818cf8" opacity="0.10" filter="url(#blur80)"/>
+  <ellipse cx="2180" cy="1060" rx="540" ry="280" fill="#2dd4bf" opacity="0.08" filter="url(#blur80)"/>
+  <rect x="0" y="0" width="10" height="1200" fill="url(#accent)"/>
+
+  <text x="140" y="205" font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="30" letter-spacing="6" fill="#7dd3fc">EDGE DIFFUSION LLM · INFERENCE OPTIMIZATION</text>
+
+  <text x="132" y="392" font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="150" font-weight="bold" fill="url(#titleGrad)">ShadowInfer</text>
+
+  <text x="140" y="472" font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="38" fill="#9fb0cc">Edge-Optimized Inference for Diffusion LLMs</text>
+  <text x="140" y="522" font-family="Noto Sans CJK SC, DejaVu Sans, sans-serif" font-size="33" fill="#7c8db0">面向端侧 Diffusion LLM 的推理优化框架</text>
+
+  <g font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="27" fill="#a9bad8">
+    <rect x="140" y="578" width="230" height="58" rx="29" fill="#0d1729" stroke="#2c4066"/>
+    <text x="255" y="617" text-anchor="middle">ShadowKV</text>
+    <rect x="396" y="578" width="170" height="58" rx="29" fill="#0d1729" stroke="#2c4066"/>
+    <text x="481" y="617" text-anchor="middle">IRAP</text>
+    <rect x="592" y="578" width="200" height="58" rx="29" fill="#0d1729" stroke="#2c4066"/>
+    <text x="692" y="617" text-anchor="middle">Q-drift</text>
+    <rect x="818" y="578" width="290" height="58" rx="29" fill="#0d1729" stroke="#2c4066"/>
+    <text x="963" y="617" text-anchor="middle">FFN Pruning</text>
+  </g>
+
+  <g font-family="DejaVu Sans, Segoe UI, sans-serif">
+    <rect x="140" y="690" width="386" height="250" rx="20" fill="#0d1729" stroke="#223455"/>
+    <text x="176" y="800" font-size="76" font-weight="bold" fill="#2dd4bf">4–8 GB</text>
+    <text x="176" y="862" font-size="26" fill="#7c8db0">VRAM budget</text>
+    <text x="176" y="898" font-size="26" fill="#7c8db0">(edge GPU target)</text>
+
+    <rect x="553" y="690" width="386" height="250" rx="20" fill="#0d1729" stroke="#223455"/>
+    <text x="589" y="800" font-size="76" font-weight="bold" fill="#818cf8">704</text>
+    <text x="589" y="862" font-size="26" fill="#7c8db0">tests passing</text>
+    <text x="589" y="898" font-size="26" fill="#7c8db0">(v3.5.0 release)</text>
+
+    <rect x="966" y="690" width="386" height="250" rx="20" fill="#0d1729" stroke="#223455"/>
+    <text x="1002" y="800" font-size="76" font-weight="bold" fill="#fbbf24">82.04%</text>
+    <text x="1002" y="862" font-size="26" fill="#7c8db0">coverage</text>
+    <text x="1002" y="898" font-size="26" fill="#7c8db0">(quality gate)</text>
+
+    <text x="140" y="1040" font-size="26" fill="#5b6c8c">~20× faster KV compression (CPU) · Spearman ≥ 0.9 drift fidelity · MIT License</text>
+    <text x="150" y="1152" font-size="26" fill="#5b6c8c">github.com/ShaneLiu04/ShadowInfer</text>
+    <text x="2410" y="1152" font-size="26" fill="#5b6c8c" text-anchor="end">ShadowKV decision plane for every denoising step</text>
+  </g>
+
+  <rect x="1400" y="140" width="1010" height="920" rx="24" fill="#0b1424" stroke="#223455"/>
+  <text x="1905" y="228" font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="40" font-weight="bold" fill="#e8eefc" text-anchor="middle">ShadowKV Decision Plane</text>
+  <text x="1905" y="270" font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="24" fill="#64748b" text-anchor="middle">per-step · per-layer · per-token-head</text>
+
+  <g font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="27">
+    <rect x="1470" y="320" width="270" height="96" rx="16" fill="#0e2f26" stroke="#34d399"/>
+    <text x="1498" y="362" fill="#e8eefc">Importance</text>
+    <text x="1498" y="396" font-size="22" fill="#5f9e8a">IRAP cross-step EMA</text>
+
+    <rect x="1470" y="450" width="270" height="96" rx="16" fill="#0b2536" stroke="#38bdf8"/>
+    <text x="1498" y="492" fill="#e8eefc">Drift</text>
+    <text x="1498" y="526" font-size="22" fill="#5b87a6">Q-drift sensitivity</text>
+
+    <rect x="1470" y="580" width="270" height="96" rx="16" fill="#38270d" stroke="#f59e0b"/>
+    <text x="1498" y="622" fill="#e8eefc">Pressure</text>
+    <text x="1498" y="656" font-size="22" fill="#a07a2e">memory budget</text>
+  </g>
+
+  <g stroke="#64748b" stroke-width="3">
+    <line x1="1748" y1="368" x2="1832" y2="470" marker-end="url(#arrowGray)"/>
+    <line x1="1748" y1="498" x2="1832" y2="498" marker-end="url(#arrowGray)"/>
+    <line x1="1748" y1="628" x2="1832" y2="526" marker-end="url(#arrowGray)"/>
+    <line x1="1978" y1="498" x2="2072" y2="420" marker-end="url(#arrowGray)"/>
+    <line x1="1978" y1="498" x2="2072" y2="498" marker-end="url(#arrowGray)"/>
+    <line x1="1978" y1="498" x2="2072" y2="576" marker-end="url(#arrowGray)"/>
+  </g>
+
+  <polygon points="1905,430 1975,498 1905,566 1835,498" fill="#111c33" stroke="#818cf8" stroke-width="3"/>
+  <text x="1905" y="492" font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="24" fill="#c7d2fe" text-anchor="middle">Arbitrate</text>
+  <text x="1905" y="520" font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">(one pass)</text>
+
+  <g font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="26">
+    <rect x="2080" y="376" width="300" height="88" rx="16" fill="#0d1729" stroke="#223455"/>
+    <text x="2108" y="414" fill="#e8eefc">precision</text>
+    <text x="2108" y="446" font-size="21" fill="#7c8db0">FP16 / INT8 / INT4</text>
+
+    <rect x="2080" y="454" width="300" height="88" rx="16" fill="#0d1729" stroke="#223455"/>
+    <text x="2108" y="492" fill="#e8eefc">reuse</text>
+    <text x="2108" y="524" font-size="21" fill="#7c8db0">prefetch mask</text>
+
+    <rect x="2080" y="532" width="300" height="88" rx="16" fill="#0d1729" stroke="#223455"/>
+    <text x="2108" y="570" fill="#e8eefc">eviction</text>
+    <text x="2108" y="602" font-size="21" fill="#7c8db0">importance-ranked</text>
+  </g>
+
+  <text x="1470" y="740" font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="24" fill="#8fa3c8">mixed-precision KV cache <tspan fill="#4d5f80">(sink-protected)</tspan></text>
+  <g>
+    <rect x="1470" y="760" width="66" height="54" rx="10" fill="#0e2f26" stroke="#34d399"/>
+    <rect x="1556" y="760" width="66" height="54" rx="10" fill="#0e2f26" stroke="#34d399"/>
+    <rect x="1642" y="760" width="66" height="54" rx="10" fill="#0b2536" stroke="#38bdf8"/>
+    <rect x="1728" y="760" width="66" height="54" rx="10" fill="#38270d" stroke="#f59e0b"/>
+    <rect x="1814" y="760" width="66" height="54" rx="10" fill="#0b2536" stroke="#38bdf8"/>
+    <rect x="1900" y="760" width="66" height="54" rx="10" fill="#38270d" stroke="#f59e0b"/>
+    <rect x="1986" y="760" width="66" height="54" rx="10" fill="#0e2f26" stroke="#34d399"/>
+    <rect x="2072" y="760" width="66" height="54" rx="10" fill="#0b2536" stroke="#38bdf8"/>
+    <rect x="2158" y="760" width="66" height="54" rx="10" fill="#38270d" stroke="#f59e0b"/>
+    <rect x="2244" y="760" width="66" height="54" rx="10" fill="#0b2536" stroke="#38bdf8"/>
+  </g>
+  <g font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="23">
+    <rect x="1470" y="842" width="20" height="20" rx="4" fill="#0e2f26" stroke="#34d399"/>
+    <text x="1502" y="860" fill="#9fb0cc">FP16</text>
+    <rect x="1580" y="842" width="20" height="20" rx="4" fill="#0b2536" stroke="#38bdf8"/>
+    <text x="1612" y="860" fill="#9fb0cc">INT8</text>
+    <rect x="1690" y="842" width="20" height="20" rx="4" fill="#38270d" stroke="#f59e0b"/>
+    <text x="1722" y="860" fill="#9fb0cc">INT4</text>
+    <text x="1940" y="860" fill="#5b6c8c">budget-aware per-token-head</text>
+  </g>
+
+  <text x="1905" y="952" font-family="DejaVu Sans, Segoe UI, sans-serif" font-size="24" fill="#4d5f80" text-anchor="middle">profiler → policy DSL → decision plane → deployable KV plan</text>
+</svg>
